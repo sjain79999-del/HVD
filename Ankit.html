@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>9 Years With You ❤️</title>
+<style>
+
+body{
+
+margin:0;
+
+font-family: 'Georgia', serif;
+
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+overflow:hidden;
+
+color:#333;
+
+}
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+
+max-width:450px;
+
+position:relative;
+
+}
+
+h1{
+
+color:#ff4d6d;
+
+}
+
+button{
+
+padding:12px 25px;
+
+margin:15px;
+
+border:none;
+
+border-radius:25px;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+#yesBtn{
+
+background:#ff4d6d;
+
+color:white;
+
+}
+
+#noBtn{
+
+background:#888;
+
+color:white;
+
+position:absolute;
+
+}
+
+#loveMessage{
+
+display:none;
+
+font-size:22px;
+
+color:#ff4d6d;
+
+margin-top:20px;
+
+animation:fadeIn 1.5s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{opacity:0;}
+
+to{opacity:1;}
+
+}
+
+/* Floating hearts */
+
+.heart{
+
+position:fixed;
+
+top:-10px;
+
+font-size:20px;
+
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+to{transform:translateY(100vh);}
+
+}
+</style>
+</head>
+<body>
+<!-- 🎵 ADD YOUR SONG FILE HERE -->
+<audio autoplay loop>
+<source src="crazy-in-love.mp3" type="audio/mp3">
+</audio>
+<div class="card">
+<h1>Ankit ❤️</h1>
+<p>
+
+It has been <b>9 beautiful years</b> with you…  
+
+And honestly, I still feel the same butterflies. 🦋  
+</p>
+<p>
+
+You make me <b>crazy in love</b> in ways I cannot explain.  
+
+Your love makes my world brighter, safer, and happier.
+</p>
+<p>
+
+There is no one else I want as my Valentine  
+
+in this life… and in every life after this. ❤️
+</p>
+<h2>Will you be my Valentine?</h2>
+<button id="yesBtn" onclick="showLove()">Yes 💖</button>
+<button id="noBtn">No 😏</button>
+<div id="loveMessage">
+
+You are stuck with me forever 😌❤️  
+
+I love you so much Ankit.
+</div>
+</div>
+<script>
+
+/* Moving NO Button */
+
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover",()=>{
+
+const x=Math.random()*(window.innerWidth-100);
+
+const y=Math.random()*(window.innerHeight-100);
+
+noBtn.style.left=x+"px";
+
+noBtn.style.top=y+"px";
+
+});
+
+/* YES Button Celebration */
+
+function showLove(){
+
+document.getElementById("loveMessage").style.display="block";
+
+startHearts();
+
+}
+
+/* Falling Hearts */
+
+function startHearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),5000);
+
+},300);
+
+}
+</script>
+</body>
+</html>
+ 
